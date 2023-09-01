@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import { useGetAllContactsQuery } from './services/contactsApi';
+import { ContactDetails } from './components/ContactDetails';
 
 function App() {
 
@@ -10,17 +11,19 @@ function App() {
 
   return (
     <div className='App'>
-      Test
+      
       <h1>My Redux project</h1>
+
       {isLoading && <h2>...Loading</h2>}
       {isFetching && <h2>...Fetching</h2>}
       {error && <h2>something went wrong</h2>}
+
       {isSuccess && (
         <div>
           {data.map(contact => {
             return <div key={contact.id}>
               <span>{contact.name}</span>
-              
+              <ContactDetails id={contact.id}/>
               </div>
           })}
             

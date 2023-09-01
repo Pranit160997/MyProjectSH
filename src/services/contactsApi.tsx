@@ -9,9 +9,15 @@ export const contactsApi = createApi({
     endpoints: (builder) => ({
         getAllContacts: builder.query<Contact[], void>({
             query: () => '/contacts' 
+        }),
+        getContact: builder.query<Contact, string>({
+            query: (id) => `/contacts/${id}`
         })
 
     })
 })
 
-export const {useGetAllContactsQuery} = contactsApi
+export const {
+    useGetAllContactsQuery,
+    useGetContactQuery
+} = contactsApi
