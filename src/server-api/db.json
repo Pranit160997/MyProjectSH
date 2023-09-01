@@ -1,0 +1,31 @@
+{
+    "contacts":[
+        {
+            "id":1,
+            "name": "pranit kumbhar",
+            "email": "pranitkumbhar19@gmail.com"
+        },
+        {
+            "id":2,
+            "name": "kaustubh kadam",
+            "email": "kk16@gmail.com"   
+        },
+        {
+            "id":3,
+            "name": "Alex Blaze",
+            "email": "alex@gmail.com"   
+        },
+        {
+            "id":4,
+            "name": "Tyler Blevins",
+            "email": "tyler11@gmail.com"   
+        },
+        {
+            "id":5,
+            "name": "Sypher PK",
+            "email": "sypher99@gmail.com"   
+        }
+
+
+    ]
+}
