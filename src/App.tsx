@@ -4,6 +4,7 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 import { useGetAllContactsQuery } from './services/contactsApi';
 import { ContactDetails } from './components/ContactDetails';
+import { AddContact } from './components/AddContact';
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
 
         </div>
       )}
+
+      <AddContact/>
     </div>
   );
 }
