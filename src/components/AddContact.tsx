@@ -6,7 +6,7 @@ export const AddContact = () => {
 
     const [addContact] = useAddContactMutation();
     const contact = {
-        "id": "6",
+        "id": "5",
         "name": "KSI",
         "email": "ksi@yahoo.com"
       }
