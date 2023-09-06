@@ -5,6 +5,8 @@ import './App.css';
 import { useGetAllContactsQuery } from './services/contactsApi';
 import { ContactDetails } from './components/ContactDetails';
 import { AddContact } from './components/AddContact';
+import { UpdateContact } from './components/UpdateContact';
+import { DeleteContact } from './components/DeleteContact';
 
 function App() {
 
@@ -33,6 +35,10 @@ function App() {
       )}
 
       <AddContact/>
+      <UpdateContact/>
+      <DeleteContact/>
+      
+      
     </div>
   );
 }
