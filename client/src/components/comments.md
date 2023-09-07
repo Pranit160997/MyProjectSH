@@ -1,0 +1,7 @@
+# `components` Comments
+
+I see that you are using the RTK hooks to make the appropriate API calls inside your components. There are no issues with the integration, so my only critique regarding the RTK aspect is that I wish the UI gave the user more control on what they want to add, update, or delete. If you have time, I hope you can take advantage of the react-hook-form library to build mini-forms to create this functionality.
+
+Small nitpick here, but as discussed in emails, we generally want to keep our coding style consistent and clean. Upon glancing over the files located inside this folder, I can see an inconsistency with tabbing. While it doesn't look like a big deal here, if we are dealing with files that are couple 100 lines long, this can easily hinder others when they are trying to follow the flow of the code (ex: lines that run in the same scope typically adopt the same tabbing just like in Python).
+
+Another nitpick is that inside your [AddContact.tsx](./AddContact.tsx) file, there is an unused import at the top of the file. While this does not really impact the production code that get sent to clients because builders are smart enough to exclude them, it can be an annoyance when it comes to keeping the project as small as possible. If you work on a bigger project and leave unused imports in many files, those lines can quickly accumulate and potentially add several megabytes of dead code to the project size.
