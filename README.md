@@ -1,46 +1,16 @@
-# Getting Started with Create React App
+# pranit-sh-project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+*This is a forked repository that contains changes and feedback for the original repository.*
 
-## Available Scripts
+### Overall Comments
+- **RTK caching**: I like the idea of creating a mini-server with the help of a library we didn't discuss before. Your RTK wrappers for this server was implemented correctly with an exception to how caching was handled. I have made some changes to how caching is handled and added comments describing the reason behind each change [here](./client/src/services/contactsApi.tsx).
+- **RTK usage**: I examined the places where you used the RTK hooks you built. I am glad you took advantage of many of the RTK states (ex: isFetching, isLoading, etc.) to conditionally render the page instead of just displaying the data.
+- **style inconsistency**: in some files, I notice a mix of tab sizes and lines that do not line up with their tabs despite being in the same scope
+- **duplicate Redux store**: read more about this [here](./client/src/app/comments.md)
+- **looking for more than just buttons**: read more about this [here](./client/src/components/comments.md)
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Miscellaneous Comments
+- As you may notice from looking at this repository, the code for your server has been extracted to a directory that is not directly under the folder containing all front-end related code.
+- The directory originally containing your server code included a `node_modules` folder, but it has been removed and added to an .gitignore to avoid future inclusions. Please remember that it is highly recommended for folders like `node_modules` to never be included inside repository code unless it is absolutely necessary with no workaround.
+- If you have time, I am hoping you add some UI components that utilizes the react-hook-form library so you can give more control to the user in deciding what contacts to add, update, and delete.
+- If you have time, I am hoping you also add some pages, preferably >=1 nested one to demonstrate your understanding of how we organize code related to different pages
