@@ -37,3 +37,11 @@
     transform: translateY(0px);
   }
 }
+
+.contact-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+

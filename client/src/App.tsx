@@ -1,46 +1,31 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import { useGetAllContactsQuery } from './services/contactsApi';
-import { ContactDetails } from './components/ContactDetails';
-import { AddContact } from './components/AddContact';
-import { UpdateContact } from './components/UpdateContact';
-import { DeleteContact } from './components/DeleteContact';
+
+import { Link, Route, createBrowserRouter, createRoutesFromElements, Outlet, RouterProvider } from 'react-router-dom';
+
+import { Root } from './layout'
+
+const Page = lazy(() => import('./components/Pages/page'))
+const AddContact = lazy(() => import('./components/AddContact'))
+const UpdateContact = lazy(() => import('./components/UpdateContact'))
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route index element={<Page />} />
+      <Route path="/addContact" element={<AddContact />} />
+      <Route path="/updateContact/:id" element={<UpdateContact />} />
+    </Route>
+  )
+)
 
 function App() {
-
-  const { data, error, isLoading, isFetching, isSuccess } = useGetAllContactsQuery()
-
   return (
-    <div className='App'>
-      
-      <h1>My Redux project</h1>
-
-      {isLoading && <h2>...Loading</h2>}
-      {isFetching && <h2>...Fetching</h2>}
-      {error && <h2>something went wrong</h2>}
-
-      {isSuccess && (
-        <div>
-          {data.map(contact => {
-            return <div key={contact.id}>
-              <span>{contact.name}</span>
-              <ContactDetails id={contact.id}/>
-              </div>
-          })}
-            
-
-        </div>
-      )}
-
-      <AddContact/>
-      <UpdateContact/>
-      <DeleteContact/>
-      
-      
-    </div>
-  );
+    <RouterProvider router={router} />
+  )
 }
+
 
 export default App;
